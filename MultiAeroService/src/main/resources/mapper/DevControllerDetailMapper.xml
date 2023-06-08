@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wim.aero.acs.db.mapper.DevControllerDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wim.aero.acs.db.entity.DevControllerDetail">
+        <id column="device_id" property="deviceId" />
+        <result column="device_type_id" property="deviceTypeId" />
+        <result column="device_scope_id" property="deviceScopeId" />
+        <result column="device_name" property="deviceName" />
+        <result column="device_ip" property="deviceIp" />
+        <result column="device_mac" property="deviceMac" />
+        <result column="device_port" property="devicePort" />
+        <result column="connect_type" property="connectType" />
+        <result column="cc_interval" property="ccInterval" />
+        <result column="cc_times" property="ccTimes" />
+        <result column="wait_time" property="waitTime" />
+        <result column="pwd" property="pwd" />
+        <result column="fix_address" property="fixAddress" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="con_status" property="conStatus" />
+        <result column="last_time" property="lastTime" />
+        <result column="card_format_01" property="cardFormat01" />
+        <result column="card_format_02" property="cardFormat02" />
+        <result column="card_format_03" property="cardFormat03" />
+        <result column="card_format_04" property="cardFormat04" />
+        <result column="card_format_05" property="cardFormat05" />
+        <result column="card_format_06" property="cardFormat06" />
+        <result column="card_format_07" property="cardFormat07" />
+        <result column="card_format_08" property="cardFormat08" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        device_id, device_type_id, device_scope_id, device_name, device_ip, device_mac, device_port,
+connect_type, cc_interval, cc_times, wait_time, pwd, fix_address, status, remark, create_by, create_time,
+update_by, update_time, con_status, last_time, card_format_01, card_format_02, card_format_03, card_format_04,
+card_format_05, card_format_06, card_format_07, card_format_08
+    </sql>
+    <select id="selectAllByDeviceId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from dev_controller_detail
+        where
+        device_id = #{deviceId,jdbcType=NUMERIC}
+    </select>
+
+</mapper>

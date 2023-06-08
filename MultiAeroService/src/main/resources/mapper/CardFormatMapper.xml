@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wim.aero.acs.db.mapper.CardFormatMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wim.aero.acs.db.entity.CardFormat">
+        <id column="seq_no" property="seqNo" />
+        <result column="format_name" property="formatName" />
+        <result column="card_type" property="cardType" />
+        <result column="type_no" property="typeNo" />
+        <result column="facility" property="facility" />
+        <result column="offset" property="offset" />
+        <result column="function_id" property="functionId" />
+        <result column="min_digits" property="minDigits" />
+        <result column="max_digits" property="maxDigits" />
+        <result column="bits" property="bits" />
+        <result column="pe_ln" property="peLn" />
+        <result column="pe_loc" property="peLoc" />
+        <result column="po_ln" property="poLn" />
+        <result column="po_loc" property="poLoc" />
+        <result column="fc_ln" property="fcLn" />
+        <result column="fc_loc" property="fcLoc" />
+        <result column="ch_ln" property="chLn" />
+        <result column="ch_loc" property="chLoc" />
+        <result column="ic_ln" property="icLn" />
+        <result column="ic_loc" property="icLoc" />
+        <result column="flags" property="flags" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        seq_no, format_name, card_type, type_no, facility, "offset", function_id, min_digits, max_digits,
+bits, pe_ln, pe_loc, po_ln, po_loc, fc_ln, fc_loc, ch_ln, ch_loc, ic_ln, ic_loc, flags
+    </sql>
+    <select id="selectAllBySeqNo" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from card_format
+        where seq_no IN
+        <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>
