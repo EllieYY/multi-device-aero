@@ -8,7 +8,7 @@
         <result column="holiday_name" property="holidayName" />
         <result column="holiday_type" property="holidayType" />
         <result column="begin_date" property="beginDate" />
-        <result column="continued_day" property="continuedDay" />
+        <result column="end_date" property="endDate" />
         <result column="status" property="status" />
         <result column="remark" property="remark" />
         <result column="create_by" property="createBy" />

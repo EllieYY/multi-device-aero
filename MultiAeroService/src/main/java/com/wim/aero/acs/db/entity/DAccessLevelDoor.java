@@ -20,20 +20,20 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("d_access_level_door")
+@TableName("d_door_access_level_reader")
 @ApiModel(value = "DAccessLevelDoor对象", description = "")
 public class DAccessLevelDoor implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableField("access_level_id")
+    @TableField("level_id")
     private Integer accessLevelId;
 
-    @TableField("access_level_name")
-    private String accessLevelName;
-
-    @TableField("schedules_group_id")
-    private Integer schedulesGroupId;
+//    @TableField("access_level_name")
+//    private String accessLevelName;
+//
+//    @TableField("schedules_group_id")
+//    private Integer schedulesGroupId;
 
     @TableField("device_id")
     private Integer deviceId;

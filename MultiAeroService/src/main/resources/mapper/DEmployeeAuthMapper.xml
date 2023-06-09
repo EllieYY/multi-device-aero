@@ -22,7 +22,7 @@
     <select id="selectOneByCardNoAndControllerId" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from d_employee_auth
+        from d_aero_employee_auth
         where
         card_no = #{cardNo,jdbcType=VARCHAR}
         AND controller_id = #{controllerId,jdbcType=NUMERIC}

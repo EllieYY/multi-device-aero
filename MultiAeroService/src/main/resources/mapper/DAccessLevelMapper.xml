@@ -4,8 +4,9 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.wim.aero.acs.db.entity.DAccessLevel">
-        <result column="access_level_id" property="accessLevelId" />
-        <result column="access_level_name" property="accessLevelName" />
+        <result column="level_id" property="accessLevelId" />
+        <result column="level_name" property="accessLevelName" />
+        <result column="schedules_group_id" property="schedulesGroupId" />
         <result column="begin_date" property="beginDate" />
         <result column="end_date" property="endDate" />
         <result column="flag" property="flag" />
@@ -18,7 +19,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        access_level_id, access_level_name, begin_date, end_date, flag, status, create_by, create_time, update_by, update_time
+        level_id, level_name,schedules_group_id, begin_date, end_date, flag, status, create_by, create_time, update_by, update_time
     </sql>
 
 </mapper>

@@ -69,11 +69,11 @@ public class DSchedules implements Serializable {
     @TableField("remark")
     private String remark;
 
-    @TableField("holiday_type_1")
-    private String holidayType1;
-
-    @TableField("holiday_type_2")
-    private String holidayType2;
+//    @TableField("holiday_type_1")
+//    private String holidayType1;
+//
+//    @TableField("holiday_type_2")
+//    private String holidayType2;
 
     @TableField("create_by")
     private String createBy;

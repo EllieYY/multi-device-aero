@@ -2,6 +2,7 @@ package com.wim.aero.acs.protocol.timezone;
 
 import com.wim.aero.acs.db.entity.DHoliday;
 import com.wim.aero.acs.message.Operation;
+import com.wim.aero.acs.util.DateUtil;
 import com.wim.aero.acs.util.ProtocolFiledUtil.CmdProp;
 import lombok.Data;
 
@@ -55,7 +56,11 @@ public class Holiday extends Operation {
     public static Holiday fronDb(int scpId, DHoliday holiday) {
         Holiday result = new Holiday();
         result.setScpNumber(scpId);
-        result.setExtend(holiday.getContinuedDay());
+
+        // 计算日期天数差 - 2023-06-09
+        int extend = DateUtil.daysBetweenDate(holiday.getBeginDate(), holiday.getEndDate());
+        result.setExtend(extend);
+//        result.setExtend(holiday.getContinuedDay());
 
         // 日期获取
         Date date = holiday.getBeginDate();

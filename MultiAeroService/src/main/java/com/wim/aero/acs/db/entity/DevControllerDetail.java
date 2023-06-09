@@ -21,7 +21,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-@TableName("dev_controller_detail")
+@TableName("aero_controller")
 @ApiModel(value = "DevControllerDetail对象", description = "")
 public class DevControllerDetail implements Serializable {
 

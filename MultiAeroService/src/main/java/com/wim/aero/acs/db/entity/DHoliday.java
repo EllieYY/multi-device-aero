@@ -41,8 +41,8 @@ public class DHoliday implements Serializable {
     @TableField("begin_date")
     private Date beginDate;
 
-    @TableField("continued_day")
-    private Integer continuedDay;
+    @TableField("end_date")
+    private Date endDate;
 
     @TableField("status")
     private String status;

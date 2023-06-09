@@ -17,8 +17,8 @@
         <result column="sun_flag" property="sunFlag" />
         <result column="status" property="status" />
         <result column="remark" property="remark" />
-        <result column="holiday_type_1" property="holidayType1" />
-        <result column="holiday_type_2" property="holidayType2" />
+<!--        <result column="holiday_type_1" property="holidayType1" />-->
+<!--        <result column="holiday_type_2" property="holidayType2" />-->
         <result column="create_by" property="createBy" />
         <result column="create_time" property="createTime" />
         <result column="update_by" property="updateBy" />
@@ -27,7 +27,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        schedules_id, schedules_name, begin_time, end_time, mon_flag, tues_flag, wed_flag, thu_flag, fri_flag, sat_flag, sun_flag, status, remark, holiday_type_1, holiday_type_2, create_by, create_time, update_by, update_time
+        schedules_id, schedules_name, begin_time, end_time, mon_flag, tues_flag, wed_flag, thu_flag, fri_flag, sat_flag, sun_flag, status, remark, create_by, create_time, update_by, update_time
     </sql>
 
 </mapper>

@@ -325,6 +325,14 @@ public class DateUtil {
         return years;
     }
 
+    /** 统计两个日期之间的年数 */
+    public static int daysBetweenDate(Date startDate, Date endDate) {
+        int days = 0;
+        days = (int) ((endDate.getTime() - startDate.getTime()) * 0.001 / (3600*24));
+
+        return days;
+    }
+
 
 
     /** 当天是一年中的第几天 */

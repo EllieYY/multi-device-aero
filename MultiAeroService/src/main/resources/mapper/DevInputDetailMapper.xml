@@ -4,7 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.wim.aero.acs.db.entity.DevInputDetail">
-        <id column="device_id" property="deviceId" />
+        <id column="all_id" property="deviceId" />
         <result column="device_type_id" property="deviceTypeId" />
         <result column="device_scope_id" property="deviceScopeId" />
         <result column="p_device_type_id" property="pDeviceTypeId" />
@@ -27,7 +27,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        device_id, device_type_id,
+        all_id, device_type_id,
         device_scope_id, p_device_type_id,
         p_device_id, controller_id,
         input_type_id, input,

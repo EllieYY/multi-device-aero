@@ -20,7 +20,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-@TableName("dev_controller_common_attribute")
+@TableName("aero_common_attribute")
 @ApiModel(value = "DevControllerCommonAttribute对象", description = "")
 public class DevControllerCommonAttribute implements Serializable {
 

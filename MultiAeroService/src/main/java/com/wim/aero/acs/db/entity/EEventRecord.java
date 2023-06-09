@@ -23,7 +23,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("e_event_record")
+@TableName("e_aero_event_record")
 @ApiModel(value = "EEventRecord对象", description = "")
 public class EEventRecord implements Serializable {
 

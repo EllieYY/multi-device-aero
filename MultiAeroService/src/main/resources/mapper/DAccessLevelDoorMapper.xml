@@ -4,11 +4,11 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.wim.aero.acs.db.entity.DAccessLevelDoor">
-        <id column="access_level_id" property="accessLevelId" />
-        <id column="schedules_group_id" property="schedulesGroupId" />
+        <id column="level_id" property="accessLevelId" />
+<!--        <id column="schedules_group_id" property="schedulesGroupId" />-->
         <id column="device_id" property="deviceId" />
         <id column="controller_id" property="controllerId" />
-        <result column="access_level_name" property="accessLevelName" />
+<!--        <result column="access_level_name" property="accessLevelName" />-->
         <result column="reader_number" property="readerNumber" />
         <result column="acr_number" property="acrNumber" />
         <result column="status" property="status" />
@@ -17,7 +17,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        access_level_id, access_level_name, schedules_group_id, device_id, reader_number, acr_number, controller_id, status, device_name
+        level_id, device_id, reader_number, acr_number, controller_id, status, device_name
     </sql>
 
     <resultMap id="ALInfoMap" type="com.wim.aero.acs.model.db.AccessLevelInfo">
@@ -72,8 +72,8 @@
     <select id="selectAllByControllerId" resultMap="ALInfoMap">
         select
             a.controller_id as scpId,
-            a.access_level_id as alId,
-            a.schedules_group_id as tzId,
+            a.level_id as alId,
+            b.schedules_group_id as tzId,
             a.acr_number as acrId,
             b.begin_date as activeDate,
             b.end_date as deactiveDate,
@@ -83,14 +83,14 @@
         where
             controller_id = #{controllerId,jdbcType=NUMERIC} and
             a.status = '0' and
-            a.access_level_id = b.access_level_id
+            a.access_level_id = b.level_id
     </select>
 
     <select id="selectListByControllerId" resultMap="ALInfoMap">
         select
             a.controller_id as scpId,
             a.access_level_id as alId,
-            a.schedules_group_id as tzId,
+            b.schedules_group_id as tzId,
             a.acr_number as acrId,
             b.begin_date as activeDate,
             b.end_date as deactiveDate,
@@ -98,7 +98,7 @@
             a.status as state
         from d_access_level_door a, d_access_level b
         where
-            a.access_level_id = b.access_level_id and
+            a.access_level_id = b.level_id and
             a.access_level_id IN
             <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
                 #{id}

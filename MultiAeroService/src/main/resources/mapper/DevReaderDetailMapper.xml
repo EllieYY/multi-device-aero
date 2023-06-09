@@ -4,7 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.wim.aero.acs.db.entity.DevReaderDetail">
-        <id column="device_id" property="deviceId" />
+        <id column="all_id" property="deviceId" />
         <result column="device_type_id" property="deviceTypeId" />
         <result column="device_scope_id" property="deviceScopeId" />
         <result column="p_device_type_id" property="pDeviceTypeId" />
@@ -66,7 +66,7 @@
     <!-- 通用查询结果列 -->
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        device_id, device_type_id, device_scope_id, p_device_type_id, p_device_id, controller_id, area_id, device_name,
+        all_id, device_type_id, device_scope_id, p_device_type_id, p_device_id, controller_id, area_id, device_name,
         fix_address, reader_number, key_mode, acr_number, pair_acr_number, access_cfg, strk_sio, strk_number,
         strike_time_min, strike_time_max, strike_mode, door_sio, door_number, dc_held, rex0_sio, rex0_number,
         rex1_sio, rex1_number, rex0_tz, rex1_tz, altrdr_sio, altrdr_number, altrdr_spec, cd_format, apb_mode,
@@ -94,15 +94,15 @@
 
     <resultMap id="AcrStrikeInfoMap" type="com.wim.aero.acs.model.db.AcrStrikeInfo">
         <result column="controller_id" property="scpId" />
-        <result column="device_id" property="acrDeviceId" />
+        <result column="all_id" property="acrDeviceId" />
         <result column="strk_number" property="strikeId" />
     </resultMap>
     <select id="selectStrikeByDeviceId" resultMap="AcrStrikeInfoMap">
         select
-            device_id, controller_id, strk_number
+            all_id, controller_id, strk_number
         from dev_reader_detail
         where
-        device_id = #{deviceId,jdbcType=NUMERIC}
+            all_id = #{deviceId,jdbcType=NUMERIC}
     </select>
 
 

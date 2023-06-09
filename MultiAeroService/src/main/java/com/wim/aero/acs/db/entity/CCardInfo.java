@@ -75,7 +75,7 @@ public class CCardInfo implements Serializable {
     @TableField("state")
     private String state;
 
-    @TableField("first_card_flag")
+    @TableField("special_permssion")
     private String firstCardFlag;
 
     @TableField("create_by")

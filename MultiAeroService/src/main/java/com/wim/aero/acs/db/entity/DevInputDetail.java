@@ -20,13 +20,13 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("dev_input_detail")
+@TableName("aero_input")
 @ApiModel(value = "DevInputDetail对象", description = "")
 public class DevInputDetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "device_id", type = IdType.AUTO)
+    @TableId(value = "all_id", type = IdType.AUTO)
     private Integer deviceId;
 
     @TableField("device_type_id")

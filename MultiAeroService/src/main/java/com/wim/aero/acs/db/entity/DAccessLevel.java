@@ -23,17 +23,20 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("d_access_level")
+@TableName("d_door_access_level")
 @ApiModel(value = "DAccessLevel对象", description = "")
 public class DAccessLevel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "access_level_id", type = IdType.AUTO)
+    @TableId(value = "level_id", type = IdType.AUTO)
     private Integer accessLevelId;
 
-    @TableField("access_level_name")
+    @TableField("level_name")
     private String accessLevelName;
+
+    @TableField("schedules_group_id")
+    private Integer schedulesGroupId;
 
     @TableField("begin_date")
     private Date beginDate;

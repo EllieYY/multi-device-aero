@@ -22,7 +22,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("d_employee_auth")
+@TableName("d_aero_employee_auth")
 @Data
 @ApiModel(value = "DEmployeeAuth对象", description = "")
 public class DEmployeeAuth implements Serializable {

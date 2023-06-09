@@ -22,14 +22,14 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("dev_x_detail")
+@TableName("aero_panel")
 @ApiModel(value = "DevXDetail对象", description = "")
 public class DevXDetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("设备ID")
-    @TableId("device_id")
+    @TableId("all_id")
     private Integer deviceId;
 
     @ApiModelProperty("设备类型ID")
