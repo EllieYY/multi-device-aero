@@ -8,10 +8,10 @@
         <result column="event_index" property="eventIndex" />
         <result column="events_time" property="eventsTime" />
         <result column="controller_id" property="controllerId" />
-        <result column="event_source_type" property="eventSourceType" />
+        <result column="source_type" property="eventSourceType" />
         <result column="source_code" property="sourceCode" />
-        <result column="event_type" property="eventType" />
-        <result column="event_type_code" property="eventTypeCode" />
+        <result column="tran_type" property="eventType" />
+        <result column="tran_code" property="eventTypeCode" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
