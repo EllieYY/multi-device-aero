@@ -41,16 +41,16 @@ public class EEventRecord implements Serializable {
     @TableField("controller_id")
     private Integer controllerId;
 
-    @TableField("event_source_type")
+    @TableField("source_type")
     private Integer eventSourceType;
 
-    @TableField("source_code")
+    @TableField("source_number")
     private Integer sourceCode;
 
-    @TableField("event_type")
+    @TableField("tran_type")
     private Integer eventType;
 
-    @TableField("event_type_code")
+    @TableField("tran_code")
     private Integer eventTypeCode;
 
 

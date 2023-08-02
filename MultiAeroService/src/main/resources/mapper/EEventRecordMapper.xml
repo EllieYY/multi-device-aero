@@ -9,14 +9,14 @@
         <result column="events_time" property="eventsTime" />
         <result column="controller_id" property="controllerId" />
         <result column="source_type" property="eventSourceType" />
-        <result column="source_code" property="sourceCode" />
+        <result column="source_number" property="sourceCode" />
         <result column="tran_type" property="eventType" />
         <result column="tran_code" property="eventTypeCode" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        seq_no, event_index, events_time, controller_id, event_source_type, source_code, event_type, event_type_code
+        seq_no, event_index, events_time, controller_id, source_type, source_number, tran_type, tran_code
     </sql>
 
 </mapper>

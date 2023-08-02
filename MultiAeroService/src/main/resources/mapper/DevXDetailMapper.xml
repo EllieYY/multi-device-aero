@@ -7,7 +7,7 @@
         <id column="all_id" property="deviceId" />
         <result column="device_type_id" property="deviceTypeId" />
         <result column="device_scope_id" property="deviceScopeId" />
-        <result column="controller_id" property="controllerId" />
+        <result column="controller_device_id" property="controllerId" />
         <result column="device_name" property="deviceName" />
         <result column="controller_port" property="controllerPort" />
         <result column="address" property="address" />
@@ -29,7 +29,7 @@
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         all_id, device_type_id,
-        device_scope_id, controller_id,
+        device_scope_id, controller_device_id,
         device_name, controller_port,
         address, model,
         sio_next_in, sio_next_out,
@@ -42,14 +42,14 @@
     <select id="selectAllByControllerId" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from dev_x_detail
+        from aero_panel
         where
-        controller_id = #{controllerId,jdbcType=NUMERIC}
+        controller_device_id = #{controllerId,jdbcType=NUMERIC}
     </select>
     <select id="selectControllerPortByControllerIdAndModel" resultType="java.lang.Integer">
         select DISTINCT controller_port
-        from dev_x_detail
-        where controller_id = #{controllerId,jdbcType=NUMERIC}
+        from aero_panel
+        where controller_device_id = #{controllerId,jdbcType=NUMERIC}
           AND model IN
             <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
                 #{id}
@@ -57,8 +57,8 @@
     </select>
     <select id="selectModelByControllerIdAndSioNumber" resultType="java.lang.Integer">
         select model
-        from dev_x_detail
-        where controller_id = #{controllerId,jdbcType=NUMERIC}
+        from aero_panel
+        where controller_device_id = #{controllerId,jdbcType=NUMERIC}
           AND sio_number = #{sioNumber,jdbcType=NUMERIC}
     </select>
 

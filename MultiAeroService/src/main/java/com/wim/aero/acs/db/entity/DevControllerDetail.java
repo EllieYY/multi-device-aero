@@ -28,7 +28,7 @@ public class DevControllerDetail implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("设备ID")
-    @TableId("device_id")
+    @TableField("device_id")
     private Integer deviceId;
 
     @ApiModelProperty("设备类型ID")

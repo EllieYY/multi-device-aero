@@ -41,7 +41,7 @@ public class DevXDetail implements Serializable {
     private Integer deviceScopeId;
 
     @ApiModelProperty("控制器ID")
-    @TableField("controller_id")
+    @TableField("controller_device_id")
     private Integer controllerId;
 
     @ApiModelProperty("设备名称")

@@ -21,7 +21,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("e_event_code_detail_dev")
+@TableName("e_event_code_aero")
 @ApiModel(value = "EEventCodeDetailDev对象", description = "")
 public class EEventCodeDetailDev implements Serializable {
 
@@ -30,19 +30,19 @@ public class EEventCodeDetailDev implements Serializable {
     @TableId(value = "seq_no", type = IdType.AUTO)
     private Integer seqNo;
 
-    @TableField("event_record_id")
+    @TableField("event_id")
     private Integer eventRecordId;
 
-    @TableField("event_source_type")
+    @TableField("source_type")
     private Integer eventSourceType;
 
-    @TableField("source_code")
+    @TableField("source_number")
     private Integer sourceCode;
 
-    @TableField("event_type")
+    @TableField("tran_type")
     private Integer eventType;
 
-    @TableField("event_type_code")
+    @TableField("tran_code")
     private Integer eventTypeCode;
 
     @TableField("change_state")

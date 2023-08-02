@@ -29,13 +29,13 @@ public class SqlServerGenerator {
     public static void main(String[] args) {
         List<String> tables = new ArrayList<>();
 //        tables.add("dev_controller_detail");
-//        tables.add("dev_x_detail");
+//        tables.add("aero_panel");
 //        tables.add("dev_input_detail");
 //        tables.add("dev_output_detail");
 //        tables.add("dev_reader_detail");
 //        tables.add("apb");
 //        tables.add("defence_input");
-//        tables.add("d_access_level_door");
+//        tables.add("d_door_access_level_reader");
 //        tables.add("d_access_level");
 //        tables.add("ele_level_reader");
 //        tables.add("d_holiday");

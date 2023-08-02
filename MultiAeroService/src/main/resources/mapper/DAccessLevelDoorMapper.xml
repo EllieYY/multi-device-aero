@@ -7,7 +7,7 @@
         <id column="level_id" property="accessLevelId" />
 <!--        <id column="schedules_group_id" property="schedulesGroupId" />-->
         <id column="device_id" property="deviceId" />
-        <id column="controller_id" property="controllerId" />
+        <id column="controller_device_id" property="controllerId" />
 <!--        <result column="access_level_name" property="accessLevelName" />-->
         <result column="reader_number" property="readerNumber" />
         <result column="acr_number" property="acrNumber" />
@@ -17,7 +17,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        level_id, device_id, reader_number, acr_number, controller_id, status, device_name
+        level_id, device_id, reader_number, acr_number, controller_device_id, status, device_name
     </sql>
 
     <resultMap id="ALInfoMap" type="com.wim.aero.acs.model.db.AccessLevelInfo">
@@ -71,7 +71,7 @@
 
     <select id="selectAllByControllerId" resultMap="ALInfoMap">
         select
-            a.controller_id as scpId,
+            a.controller_device_id as scpId,
             a.level_id as alId,
             b.schedules_group_id as tzId,
             a.acr_number as acrId,
@@ -79,27 +79,27 @@
             b.end_date as deactiveDate,
             b.flag as nEscortCode,
             a.status as state
-        from d_access_level_door a, d_access_level b
+        from d_door_access_level_reader a, d_door_access_level b
         where
-            controller_id = #{controllerId,jdbcType=NUMERIC} and
+            controller_device_id = #{controllerId,jdbcType=NUMERIC} and
             a.status = '0' and
-            a.access_level_id = b.level_id
+            a.level_id = b.level_id
     </select>
 
     <select id="selectListByControllerId" resultMap="ALInfoMap">
         select
-            a.controller_id as scpId,
-            a.access_level_id as alId,
+            a.controller_device_id as scpId,
+            a.level_id as alId,
             b.schedules_group_id as tzId,
             a.acr_number as acrId,
             b.begin_date as activeDate,
             b.end_date as deactiveDate,
             b.flag as nEscortCode,
             a.status as state
-        from d_access_level_door a, d_access_level b
+        from d_door_access_level_reader a, d_door_access_level b
         where
-            a.access_level_id = b.level_id and
-            a.access_level_id IN
+            a.level_id = b.level_id and
+            a.level_id IN
             <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
                 #{id}
             </foreach>
@@ -131,10 +131,10 @@
 
 
     <select id="searchAccessLevelIdByControllerId" resultType="java.lang.Integer">
-        select access_level_id
-        from d_access_level_door
-        where controller_id = #{controllerId,jdbcType=NUMERIC}
-        group by access_level_id
+        select level_id
+        from d_door_access_level_reader
+        where controller_device_id = #{controllerId,jdbcType=NUMERIC}
+        group by level_id
     </select>
 
 </mapper>

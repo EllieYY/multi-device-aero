@@ -39,7 +39,7 @@ public class EAccessRecord implements Serializable {
     @TableField("controller_id")
     private Integer controllerId;
 
-    @TableField("event_source_type")
+    @TableField("source_type")
     private Integer eventSourceType;
 
     @TableField("source_code")

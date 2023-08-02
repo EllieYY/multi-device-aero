@@ -44,7 +44,7 @@ public class DAccessLevelDoor implements Serializable {
     @TableField("acr_number")
     private Integer acrNumber;
 
-    @TableField("controller_id")
+    @TableField("controller_device_id")
     private Integer controllerId;
 
     @TableField("status")

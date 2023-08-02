@@ -49,7 +49,7 @@ public class DevReaderDetail implements Serializable {
     private Integer pDeviceId;
 
     @ApiModelProperty("控制器ID")
-    @TableField("controller_id")
+    @TableField("controller_device_id")
     private Integer controllerId;
 
     @ApiModelProperty("系统区域")

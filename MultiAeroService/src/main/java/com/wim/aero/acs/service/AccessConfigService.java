@@ -96,8 +96,9 @@ public class AccessConfigService {
         elevatorAccessLevelConfig(scpId, isEleScp, cmdList);
         accessLevelConfig(scpId, isEleScp, cmdList);
 
-        apbConfig(scpId, cmdList);
-        mpGroupConfig(scpId, cmdList);
+        // TDOO:apb和防区
+//        apbConfig(scpId, cmdList);
+//        mpGroupConfig(scpId, cmdList);
     }
 
     /**
@@ -236,6 +237,7 @@ public class AccessConfigService {
             cmdList.add(new ScpCmd(scpId, msg, IdUtil.nextId()));
 
         }
+
 
         log.info("卡冻结-卡挂失 {}", cmdList.toString());
 

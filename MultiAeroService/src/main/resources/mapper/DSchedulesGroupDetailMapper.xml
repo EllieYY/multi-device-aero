@@ -30,7 +30,7 @@
 
     <select id="selectByScpId" resultMap="TimeZoneMap">
         select
-            controller_id as scpId,
+            controller_device_id as scpId,
             a.schedules_group_id as groupId,
             b.schedules_id as timeId,
             datediff( minute , '12:00AM', c.begin_time ) as startTime,
@@ -46,7 +46,7 @@
 --              256 * ISNULL(c.holiday_type_1, 0) +
 --              512 * ISNULL(c.holiday_type_2, 0)
                 ) AS daymask
-        from d_access_level_door a, d_schedules_group_detail b
+        from d_door_access_level_reader a, d_schedules_group_detail b
         LEFT JOIN d_schedules c
         ON b.schedules_id = c.schedules_id
         where controller_id = #{scpId}

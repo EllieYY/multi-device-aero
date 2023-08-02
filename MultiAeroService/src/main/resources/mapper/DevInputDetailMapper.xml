@@ -9,7 +9,7 @@
         <result column="device_scope_id" property="deviceScopeId" />
         <result column="p_device_type_id" property="pDeviceTypeId" />
         <result column="p_device_id" property="pDeviceId" />
-        <result column="controller_id" property="controllerId" />
+        <result column="controller_device_id" property="controllerId" />
         <result column="input_type_id" property="inputTypeId" />
         <result column="input" property="input" />
         <result column="device_name" property="deviceName" />
@@ -29,7 +29,7 @@
     <sql id="Base_Column_List">
         all_id, device_type_id,
         device_scope_id, p_device_type_id,
-        p_device_id, controller_id,
+        p_device_id, controller_device_id,
         input_type_id, input,
         device_name, status,
         shield_flag, alarm_delay_flag,
@@ -41,7 +41,7 @@
     <select id="selectAllByPDeviceIdList" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from dev_input_detail
+        from aero_input
         where p_device_id IN
         <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
             #{id}
@@ -50,16 +50,16 @@
     <select id="selectAllByControllerId" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from dev_input_detail
+        from aero_input
         where
-        controller_id = #{controllerId,jdbcType=NUMERIC}
+        controller_device_id = #{controllerId,jdbcType=NUMERIC}
     </select>
     <select id="selectAllByControllerIdAndSioNumber" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from dev_input_detail
+        from aero_input
         where
-        controller_id = #{controllerId,jdbcType=NUMERIC}
+        controller_device_id = #{controllerId,jdbcType=NUMERIC}
         AND sio_number = #{sioNumber,jdbcType=NUMERIC}
     </select>
 

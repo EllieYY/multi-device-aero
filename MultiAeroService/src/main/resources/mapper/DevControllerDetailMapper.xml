@@ -4,7 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.wim.aero.acs.db.entity.DevControllerDetail">
-        <id column="device_id" property="deviceId" />
+        <result column="device_id" property="deviceId" />
         <result column="device_type_id" property="deviceTypeId" />
         <result column="device_scope_id" property="deviceScopeId" />
         <result column="device_name" property="deviceName" />
@@ -45,7 +45,7 @@ card_format_05, card_format_06, card_format_07, card_format_08
     <select id="selectAllByDeviceId" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from dev_controller_detail
+        from aero_controller
         where
         device_id = #{deviceId,jdbcType=NUMERIC}
     </select>

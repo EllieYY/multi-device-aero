@@ -41,7 +41,7 @@ public class DevOutputDetail implements Serializable {
     @TableField("p_device_id")
     private Integer pDeviceId;
 
-    @TableField("controller_id")
+    @TableField("controller_device_id")
     private Integer controllerId;
 
     @TableField("output_type_id")

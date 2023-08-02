@@ -43,7 +43,7 @@
         select
         top 1
         <include refid="Base_Column_List"/>
-        from dev_controller_common_attribute
+        from aero_common_attribute
     </select>
 
 </mapper>
