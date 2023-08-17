@@ -102,7 +102,7 @@
                 ) AS daymask
         from d_schedules_group_detail b
         left join d_schedules c on b.schedules_id = c.schedules_id
-        where b.status = '0'
+        where b.status = '1'
         order by c.schedules_id
     </select>
 

@@ -54,4 +54,11 @@ public class QueueConsumer {
             session.recover();    // 重发
         }
     }
+
+    // TODO:test
+    @JmsListener(destination = "cgcgQueue", containerFactory = "MyJmsQueueListener")
+    public void receiveCgMsg(Message message, Session session) throws JMSException {
+        TextMessage textMessage = (TextMessage)message;
+        log.info("{}", textMessage);
+    }
 }
